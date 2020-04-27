@@ -1,4 +1,4 @@
-# Code Nation 12 week bootcamp
+# Code Nation bootcamp
 
 # Week 1 
 
