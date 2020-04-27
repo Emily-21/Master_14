@@ -1,6 +1,6 @@
 let pinAttempts = 3;
 let i = 1
-let balance = 1000;
+let balance = 100;
 let withdrawalMax = 250
 let withdrawalRequest;
 
@@ -18,14 +18,15 @@ const withdraw = () => {
    } else if (withdrawalRequest > withdrawalMax){
       alert(`Sorry you can only withdraw £250 per day. You have ${withdrawalMax} 
       left to withdraw today.`)
+      withdraw();
    } else { 
         alert(`you have withdrawn £${withdrawalRequest}.`);
         balance -= withdrawalRequest;
         withdrawalMax -= withdrawalRequest;
-        alert(`your updated balance is ${balance}`);
+        alert(`your updated balance is £${balance}`);
         return [withdrawalMax, balance];
+      
    }
-
    }
 
 
@@ -38,7 +39,6 @@ while (pinAttempts > i)
 {if (userPin == pin) {
     alert(`Your pin is correct!`) ; 
     withdraw();
-break;
 } else { 
     
     pinAttempts--;
@@ -51,6 +51,8 @@ break;
 return pinAttempts;
  }
 
-enterPin() ;
 
+enterPin();
 withdraw();
+
+
