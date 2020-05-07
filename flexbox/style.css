@@ -1,0 +1,77 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding:0px;
+
+}
+
+
+.container {
+    display: flex;
+    /* min-height: 100vh; */
+    /* flex-direction: row; 
+    flex-wrap: wrap; */
+    /* justify-content: space-between; */
+    /* height:100vh;
+    border: 10px solid royalblue;
+    align-content: stretch;  */
+}
+
+/* align-items: initial; */
+
+    /* align items: baseline; the size of the content can be all over the show, but they will still sit in a line.  */
+
+
+
+    .box {
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    padding: 15px;
+    flex: 1;
+    /* width: 33.33%;  */
+    /* when specifying width as a %, you cant show space between etc, because it takes the width first and foremost and will do that because they are incompatible */
+    }
+
+
+/* ordering starts from 0 as default, so if you dont' specify an order it will work top to bottom
+if you do specify, make sure everything has an order */
+.box1 {
+    background-color: crimson;
+   
+}
+
+.box2{
+    background-color:rebeccapurple;
+
+}
+
+.box3{
+    background-color: royalblue;
+}
+.box4{
+    background-color: salmon;
+}
+
+.box5{
+    background-color: slateblue;
+}
+.box6{
+    background-color: springgreen;
+}
+
+.box7{
+    background-color: violet;
+}
+
+.box8{
+    background-color: teal;
+}
+
+.box9{
+    background-color: yellowgreen;
+}
+
+.box10{
+    background-color: orange;
+}
