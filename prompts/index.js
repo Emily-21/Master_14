@@ -11,7 +11,7 @@
 // }
 
 
-while 
+ 
 while(true) {
 	let userInput = prompt("Enter your guess");
 	let randNum = Math.floor(Math.random() * 6)+1;

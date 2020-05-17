@@ -31,12 +31,18 @@ const roll = document.getElementById("roll");
 const message = document.getElementById("message");
 const img = document.getElementById("img");
 let totalScore = 0;
+let diceRollResult;
 
+// let diceRollResult = (Math.ceil(Math.random()* 6)); 
+//at moment the rannum gen is its own function, but cant get it to work this way. 
 
+const roller = () =>
+{ let diceRollResult = Math.ceil(Math.random()* 6);
+return diceRollResult;
+}
 
 
 const diceRoll = () => {
-let diceRollResult = (Math.ceil(Math.random()* 6));
 roll.textContent= diceRollResult; //shows your roll on screen (replace with images)
 totalScore+=diceRollResult; //adds the roll to your total
 playerScore.textContent= totalScore; //displays your total on screen
@@ -46,7 +52,7 @@ if (diceRollResult == 1) //if its 1, logs u lose, and resets the total.
     totalScore = 0;//reset total score
     playerScore.textContent= totalScore; //displays your total on screen
     button.textContent = `Play again?`;
-    return totalScore, diceRollResult;
+    return totalScore;
     }  
 
 else if (totalScore >= 20) //checks if your total is more or equal to 20
@@ -54,7 +60,7 @@ else if (totalScore >= 20) //checks if your total is more or equal to 20
     playerScore.textContent= totalScore; //displays your total on screen
     totalScore = 0;//reset the score and can restart the game
     button.textContent = `Play again?`;
-    return totalScore, diceRollResult;
+    return totalScore;
     
 }
 
@@ -62,13 +68,13 @@ else { //the total is less than 20
     message.textContent = `keep rolling pal`; //says this on screen
     playerScore.textContent= totalScore; //displays your total on screen
     button.textContent = `Let's roll baby!`;
-    return totalScore, diceRollResult; //return the score for next roll
+    return totalScore; //return the score for next roll
 }
 
 }
 
 const diceImg = () => {
-    if (diceRollResult == 1)
+if (diceRollResult == 1)
 {img.src = "img/dice1.png";
 } else if(diceRollResult == 2)
 {img.src = "img/dice2.png";
@@ -81,12 +87,22 @@ const diceImg = () => {
 }else {img.src= "img/dice6.png";
 }
 }
-
-
-
-
 button.addEventListener("click", () =>{
     diceRoll();
     diceImg();
 })
 
+
+
+
+
+/* cant get the random number generator to work in BOTH functions, works in one or the other, 
+if i declare it as a global variable, the number doesn't update on the button click, it just 
+generates the ran number once. If I declare it within the button event function, its value isn't read
+and i get NAN.
+
+have also tried creating it as a lil function itself, but doesnt run then.
+tried calling the img function within the diceroll func but didnt work, 
+
+options --- merge the two functions, lots more if/else statements - possibly a switch case.
+*/

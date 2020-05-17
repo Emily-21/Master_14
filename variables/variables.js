@@ -12,7 +12,7 @@ let numberOne = 10
 let numberTwo = 5
 
 
-numberTwo --
+// numberTwo --
 console.log(numberTwo)
 
 let favouriteNumber = 4
