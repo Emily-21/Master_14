@@ -1,1 +1,42 @@
 
+ 
+ * {
+     font-family: Arial, Helvetica, sans-serif;
+     color: black;
+     text-align: center;
+     background-image: linear-gradient(to right, orange, hotpink) ;
+ }
+ 
+ h1 {
+     font-family: Arial;
+font-size: 30px;
+background: none;
+ }
+
+ p {
+     font-size: 20px;
+     background: none;
+ }
+
+ div {
+     padding: 20px;
+ }
+
+ 
+ button {
+    background: yellow;
+    padding:10px;
+    border: none;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+#box {
+    padding: 20px;
+    margin: 100px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: ghostwhite;
+}
+

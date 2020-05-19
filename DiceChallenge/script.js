@@ -31,10 +31,8 @@ const roll = document.getElementById("roll");
 const message = document.getElementById("message");
 const img = document.getElementById("img");
 let totalScore = 0;
-let diceRollResult;
 
-// let diceRollResult = (Math.ceil(Math.random()* 6)); 
-//at moment the rannum gen is its own function, but cant get it to work this way. 
+
 
 const roller = () =>
 { let diceRollResult = Math.ceil(Math.random()* 6);
@@ -43,16 +41,16 @@ return diceRollResult;
 
 
 const diceRoll = () => {
-roll.textContent= diceRollResult; //shows your roll on screen (replace with images)
-totalScore+=diceRollResult; //adds the roll to your total
-playerScore.textContent= totalScore; //displays your total on screen
-if (diceRollResult == 1) //if its 1, logs u lose, and resets the total.
+    let diceRollRes = roller();
+    totalScore+=diceRollRes; //adds the roll to your total
+    playerScore.textContent= totalScore; //displays your total on screen
+if (diceRollRes == 1) //if its 1, logs u lose, and resets the total.
     {
-    message.textContent = `you lost`;
+    message.textContent = `You lost!`;
     totalScore = 0;//reset total score
     playerScore.textContent= totalScore; //displays your total on screen
     button.textContent = `Play again?`;
-    return totalScore;
+    return totalScore, diceRollRes;
     }  
 
 else if (totalScore >= 20) //checks if your total is more or equal to 20
@@ -60,36 +58,40 @@ else if (totalScore >= 20) //checks if your total is more or equal to 20
     playerScore.textContent= totalScore; //displays your total on screen
     totalScore = 0;//reset the score and can restart the game
     button.textContent = `Play again?`;
-    return totalScore;
+    return totalScore, diceRollRes;
     
 }
 
 else { //the total is less than 20
-    message.textContent = `keep rolling pal`; //says this on screen
+    message.textContent = `Keep rolling!`; //says this on screen
     playerScore.textContent= totalScore; //displays your total on screen
     button.textContent = `Let's roll baby!`;
-    return totalScore; //return the score for next roll
+    return totalScore, diceRollRes; //return the score for next roll
 }
 
 }
 
 const diceImg = () => {
-if (diceRollResult == 1)
+let diceRollR = diceRoll();
+if (diceRollR == 1)
 {img.src = "img/dice1.png";
-} else if(diceRollResult == 2)
+} else if(diceRollR == 2)
 {img.src = "img/dice2.png";
-}else if(diceRollResult == 3)
+}else if(diceRollR == 3)
 {img.src = "img/dice3.png";
-}else if(diceRollResult == 4)
+}else if(diceRollR == 4)
 {img.src = "img/dice4.png";
-}else if(diceRollResult == 5)
+}else if(diceRollR == 5)
 {img.src = "img/dice5.png";
-}else {img.src= "img/dice6.png";
+}else if (diceRollR==6)
+{img.src= "img/dice6.png";
+} else 
+(img.src="/")
 }
-}
+
+
 button.addEventListener("click", () =>{
-    diceRoll();
-    diceImg();
+        diceImg();
 })
 
 
@@ -104,5 +106,6 @@ and i get NAN.
 have also tried creating it as a lil function itself, but doesnt run then.
 tried calling the img function within the diceroll func but didnt work, 
 
-options --- merge the two functions, lots more if/else statements - possibly a switch case.
+options --- merge the two functions, lots more if/else statements - possibly a switch case?
+-- can i put the rannum in a while loop?
 */
