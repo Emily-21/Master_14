@@ -14,14 +14,12 @@ need to define a total score*/
 
  secondly, we want the dice to roll when the button is clicked- sorted this part!
 
- thirdly, we want the appropriate score to bring up the specific dice image
+ thirdly, we want the appropriate score to bring up the specific dice image - done
 
 fourthly, when we win or lose we want the button text to change to 
 play again? - done
 
-fifthly, we want it to reset all the values when we click play again- so it's 2 clicks, play again and then lets roll baby
-
- finally, we want it to look pretty.
+ finally, we want it to look pretty - done
 
 */
 
@@ -106,6 +104,6 @@ and i get NAN.
 have also tried creating it as a lil function itself, but doesnt run then.
 tried calling the img function within the diceroll func but didnt work, 
 
-options --- merge the two functions, lots more if/else statements - possibly a switch case?
--- can i put the rannum in a while loop?
+SOLUTION : 
+I wasn't calling the value from the function correctly, it should have been calling the roller func, not the returned value from the func.
 */
